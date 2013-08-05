@@ -74,6 +74,10 @@ search squares =
                                   [Shape (Map.fromList [ ((0,0), ()) ])]))
              !! (squares - 1)))
 
+showShapes :: [String] -> String
+showShapes list =
+  (concat (List.intersperse "\n\n" list))
+
 main :: IO ()
 main = do
-  putStr (concat (List.intersperse "\n\n" (search 8)))
+  putStr (showShapes (search 8))
