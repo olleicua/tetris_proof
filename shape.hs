@@ -5,12 +5,6 @@ import Data.Ord
 data Shape = Shape (Map (Int, Int) ())
   deriving (Eq, Ord)
 
-foo = Shape (Map.fromList
-  [ ((0,0), ()) ])
-
-bar = Shape (Map.fromList
-  [ ((-2,4), ()), ((-1,3), ()), ((0,2), ()) ])
-
 rowsOrCols :: ((Int, Int) -> Int) -> Shape -> [Int]
 rowsOrCols operator (Shape m) =
   [minimum (List.map operator (Map.keys m)) ..
